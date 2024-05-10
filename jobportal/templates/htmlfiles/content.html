@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/c1.css' %}">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>{{name}} Job Information........</h1>
+    {% if jobs %}
+    <table>
+      <tr>
+        <!-- <th>Sl_No.</th> -->
+        <th>Date</th>
+        <th>Company_Name</th>
+        <th>Title</th>
+        <th>Eligibility</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Contact_No.</th>
+      </tr>
+      {% for j in jobs %}
+      <tr>
+        <!-- <td>{{j.id}}</td> -->
+        <td>{{j.date}}</td>
+        <td>{{j.company}}</td>
+        <td>{{j.title}}</td>
+        <td>{{j.eligibility}}</td>
+        <td>{{j.address}}</td>
+        <td>{{j.email}}</td>
+        <td>{{j.phonenumber}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+    {% else %}
+        <p>No record found in Database.</p>
+    {% endif %}
+
+    <a href="http://127.0.0.1:8000/" class="button">Go Back!</a>
+  </body>
+</html>
